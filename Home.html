@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="elegant.css"> 
+  <style type="text/css" media="screen">
+    .fullscreen-bg {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        overflow: hidden;
+        z-index: -100;
+    }
+
+    .fullscreen-bg__video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        
+    }
+  </style>
+</head>
+
+<body style="background-image: url('../../Desktop/Captura de pantalla 2018-02-26 a la(s) 11.38.55.png');background-position:center center;">
+  <nav class="navbar navbar-expand-md bg-primary navbar-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="datos/logo.png">
+        <img src="datos/logo.png" class="d-inline-block align-top img-fluid float-left" alt="" width="200"> </a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar2SupportedContent" aria-controls="navbar2SupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+      <div class="collapse navbar-collapse text-center justify-content-end" id="navbar2SupportedContent">
+        <ul class="navbar-nav bg-primary">
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fa fa-fw fa-lg fa-home text-light"></i><b class="text-light">&nbsp;Inicio</b></a>
+          </li>
+          <li class="nav-item bg-primary text-dark">
+            <a class="nav-link text-light" href="#"><i class="fa d-inline fa-lg bg-primary fa-connectdevelop"></i> Acerca de</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="py-5">
+    <div class="container-fluid fullscreen-bg">
+      <video loop muted autoplay poster="img/videoframe.jpg" class="fullscreen-bg__video">
+          <source src="datos/video.mp4" type="video/mp4">
+      </video>
+      <div class="row">
+        <div class="col-md-12"> </div>
+      </div>
+    </div>
+  </div>
+</br>
+  <div class="py-5 bg-primary transp">
+    <div class="container">
+      <div class="row">          
+        </div>
+        <div class="col-md-12">
+          <h1 class="text-light display-4 text-center" style="font-weight: 900">¿Cómo se comporta el mercado de compras municipales por rubro?</h1>
+          <h4 class="text-center">Conoce como se relacionan los municipios del pais y sus proveedores, analizando qué compran, a quiénes le compran y cuánto le compran.</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+          <a class="btn btn-lg radius btn-block btn-light button_p" href="grafo2.html">Ir a la Aplicación</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+
+</html>

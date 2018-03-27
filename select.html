@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Prueba Select</title>
+	<script src="datos/jquery.min.js"></script>
+	<link href="datos/select2.css" rel="stylesheet" type="text/css" >
+	<script src="datos/select2.full.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link href="datos/select2-bootstrap.css" rel="stylesheet" >
+	<link href="datos/proveedores.css" rel="stylesheet" > 
+	<script src="datos/d3js.v4.min.js"></script>
+	<style type="text/css" media="screen">
+	</style>
+	
+	<script>
+		// Javascript para dar estilo al select
+		$(document).ready(function() {
+				var js;
+				$.getJSON('datos/level3.json', callbackmydata);
+			    function callbackmydata ( data ) {
+			    	js = data;
+					console.log(data);
+			    	var data = $.map(js, function (obj) {
+						obj.id = obj.id
+						return obj;
+					});
+
+					var data = $.map(js, function (obj) {
+						obj.text = obj.text
+						return obj;
+					});
+
+					console.log(data);
+			        $('.categorias').select2({
+			        	theme: "bootstrap",
+			            placeholder: 'Seleccione una categoría...',
+			            allowClear: true,
+			            data: data,
+			            templateResult: function(data) {
+					        return data.text;
+					    },
+					    sorter: function(data) {
+					        return data.sort(function(a, b) {
+					            return a.text < b.text ? -1 : a.text > b.text ? 1 : 0;
+					        });
+					    }
+					}).on("select2:select", function (e) { 
+					    $('.select2-selection__rendered li.select2-selection__choice').sort(function(a, b) {
+					        return $(a).text() < $(b).text() ? -1 : $(a).text() > $(b).text() ? 1 : 0;
+					    }).prependTo('.select2-selection__rendered');
+
+			        });
+
+			        var svg = d3.select("#canvas").append("svg").attr("id", "amazingViz");
+			        var circle = svg.append("circle")
+                        	.attr("cx", 30)
+                        	.attr("cy", 30)
+                       		.attr("r", 20);
+
+			        $('.categorias').on('change', function() {
+			        	//svg.remove();    instrucción para borrar el gráfico
+				      	var datos = $(".categorias option:selected").text();
+				    	
+				    	console.log(datos);
+				    });
+			    }
+			
+		});
+	</script>
+
+</head>
+<body>
+	<div class="select2-wrapper">
+		<select class="categorias search" dir="rtl">
+			<option></option>
+		</select>
+	</div>
+	<div>
+		<input type="text" id="test">
+		
+	</div>
+	<div id="canvas" class="lienza">	
+		
+	</div>
+</select>
+</body>
+</html> 
