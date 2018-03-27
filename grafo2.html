@@ -118,13 +118,19 @@ div{
 	background: black;
 }
 .inicio{
-	height: 15px;
-	font-family: Roboto;
-	text-align: right;
-	padding-right: 20px;
+	font-weight: 200 !important;
+	font-size: 0.8rem;
+  	font-weight: 200;
+  	font-family: Roboto;
+	text-decoration: none;
 }
 a, a:hover, a:active, a:visited { 
 	color: white; 
+}
+li {
+    float: right;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
 }
 
 </style>
@@ -143,8 +149,14 @@ a, a:hover, a:active, a:visited {
 </head>
 <body>
 	<div class="inicio">
-		<p><a href="index.html" "Inicio"><i class="fas fa-home"></i> Inicio</a>   <a href="index.html" "Acerca de"><i class="fas fa-file-alt"></i> Acerca de</a>
-		</p>
+		<ul class="">
+          <li class="">
+          	<a class="" href="#"><i class="fa d-inline fa-lg"></i> Acerca de</a>
+          </li>
+          <li class="">
+			<a class="" href="#"><i class="fa fa-fw fa-lg fa-home text-light"></i><b class="">&nbsp;Inicio</b></a>
+          </li>
+        </ul>
 	</div>
 	<div id="selector" class="etiquetas div_selectores search" style="color: white;"> Selecciona una categoría:
 		<select class="categorias" dir="rtl" style="padding: 5px">
